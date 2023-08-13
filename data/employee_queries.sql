@@ -18,7 +18,7 @@ JOIN departments AS d
 ON dm.dept_no = d.dept_no;
 
 --List department number for each employee along with employee number, last name, first name, and depatment name
-SELECT e.emp_no, e,last_name, e.first_name, de.dept_no, d.dept_name
+SELECT e.emp_no, e.last_name, e.first_name, de.dept_no, d.dept_name
 FROM employees AS e
 JOIN dept_emp as de
 ON e.emp_no = de.emp_no
@@ -31,7 +31,7 @@ FROM employees
 WHERE first_name = 'Hercules' AND last_name LIKE 'B%'
 
 --List each employee in the Sales department, along with thier employee number, last name, and first name
-SELECT e.emp_no, e.last_name, e,first_name, d.dept_name
+SELECT e.emp_no, e.last_name, e.first_name, d.dept_name
 FROM employees as e
 JOIN dept_emp as de
 ON e.emp_no = de.emp_no
@@ -39,17 +39,18 @@ JOIN departments as d
 ON d.dept_no = de.dept_no
 WHERE d.dept_name = 'Sales';
 
---Listeach employee in the Sales and Development departments, along with thier employee number, last name, first name, and depatment name 
-SELECT e.emp_no, e.last_name, e,first_name, d.dept_name
+--List each employee in the Sales and Development departments, along with thier employee number, last name, first name, and depatment name 
+SELECT e.emp_no, e.last_name, e.first_name, d.dept_name
 FROM employees as e
 JOIN dept_emp as de
 ON e.emp_no = de.emp_no
 JOIN departments as d
 ON d.dept_no = de.dept_no
-WHERE d.dept_name = 'Sales' OR d.dept_name = 'Development;
+WHERE d.dept_name = 'Sales' OR d.dept_name = 'Development';
 
---List the frequency counts, in descending order, of all employee last names(how many employees share each last name)
-SELECT last_name, COUNT(last_name) as "Frequency Count"
+--List the frequency counts, in descending order, of all employee last name, show many employees share each last name)
+SELECT last_name, COUNT(last_name) AS "Frequency Count"
 FROM employees
 GROUP BY last_name
 ORDER BY "Frequency Count" DESC;
+

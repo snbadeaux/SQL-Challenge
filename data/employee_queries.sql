@@ -31,7 +31,7 @@ FROM employees
 WHERE first_name = 'Hercules' AND last_name LIKE 'B%';
 
 --List each employee in the Sales department, along with thier employee number, last name, and first name
-SELECT e.emp_no, e.last_name, e,first_name, d.dept_name
+SELECT e.emp_no, e.last_name, e.first_name, d.dept_name
 FROM employees as e
 JOIN dept_emp as de
 ON e.emp_no = de.emp_no
@@ -40,7 +40,7 @@ ON d.dept_no = de.dept_no
 WHERE d.dept_name = 'Sales';
 
 --Listeach employee in the Sales and Development departments, along with thier employee number, last name, first name, and depatment name 
-SELECT e.emp_no, e.last_name, e,first_name, d.dept_name
+SELECT e.emp_no, e.last_name, e.first_name, d.dept_name
 FROM employees as e
 JOIN dept_emp as de
 ON e.emp_no = de.emp_no

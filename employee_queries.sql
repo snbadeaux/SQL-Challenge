@@ -17,7 +17,7 @@ ON dm.emp_no = e.emp_no
 JOIN departments AS d
 ON dm.dept_no = d.dept_no;
 
---List department number for each employee along with employee number, last name, first name, and depatment name
+--List department number for each employee along with employee number, last name, first name, and department name
 SELECT e.emp_no, e.last_name, e.first_name, de.dept_no, d.dept_name
 FROM employees AS e
 JOIN dept_emp as de
@@ -30,7 +30,7 @@ SELECT first_name, last_name, sex
 FROM employees
 WHERE first_name = 'Hercules' AND last_name LIKE 'B%';
 
---List each employee in the Sales department, along with thier employee number, last name, and first name
+--List each employee in the Sales department, along with their employee number, last name, and first name
 SELECT e.emp_no, e.last_name, e.first_name, d.dept_name
 FROM employees as e
 JOIN dept_emp as de
@@ -39,11 +39,8 @@ JOIN departments as d
 ON d.dept_no = de.dept_no
 WHERE d.dept_name = 'Sales';
 
-<<<<<<< HEAD
---List each employee in the Sales and Development departments, along with thier employee number, last name, first name, and depatment name 
-=======
---Listeach employee in the Sales and Development departments, along with thier employee number, last name, first name, and depatment name 
->>>>>>> 0ca141dc41babab376614a8fedffa27954b6f32d
+
+--List each employee in the Sales and Development departments, along with their employee number, last name, first name, and department name 
 SELECT e.emp_no, e.last_name, e.first_name, d.dept_name
 FROM employees as e
 JOIN dept_emp as de
@@ -57,7 +54,4 @@ SELECT last_name, COUNT(last_name) AS "Frequency Count"
 FROM employees
 GROUP BY last_name
 ORDER BY "Frequency Count" DESC;
-<<<<<<< HEAD
 
-=======
->>>>>>> 0ca141dc41babab376614a8fedffa27954b6f32d
